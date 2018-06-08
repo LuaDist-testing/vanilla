@@ -1,11 +1,11 @@
 -- This file was automatically generated for the LuaDist project.
 
 package = "vanilla"
-version = "0.1.0.rc3-1"
+version = "0.1.0.rc4-1"
 
 -- LuaDist source
 source = {
-  tag = "0.1.0.rc3-1",
+  tag = "0.1.0.rc4-1",
   url = "git://github.com/LuaDist-testing/vanilla.git"
 }
 -- Original source
