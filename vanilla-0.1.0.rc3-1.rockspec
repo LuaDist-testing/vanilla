@@ -1,11 +1,11 @@
 -- This file was automatically generated for the LuaDist project.
 
 package = "vanilla"
-version = "0.1.0.rc2-1"
+version = "0.1.0.rc3-1"
 
 -- LuaDist source
 source = {
-  tag = "0.1.0.rc2-1",
+  tag = "0.1.0.rc3-1",
   url = "git://github.com/LuaDist-testing/vanilla.git"
 }
 -- Original source
@@ -28,30 +28,19 @@ luarocks install vanilla
 
 dependencies ={
     "lua=5.1",
-    "ansicolors=1.0.2-3",
-    "busted=1.11.1",
-    "lua-cjson=2.1.0-1",
     "luafilesystem=1.6.2-2",
-    "luaposix = 33.3.1-1",
-    "penlight=1.3.1-1",
     "lua-resty-template=1.5-1",
     "lua-resty-cookie=0.1.0-1",
     "lua-resty-session=2.2-1",
-    "lua-cmsgpack=0.4.0-0",
     "lua-resty-http=0.06-0"
 }
 
 build = {
    type = "builtin",
    modules = {
-      ["spec.helper"] = "spec/helper.lua",
-      ["spec.v.dispatcher_spec"] = "spec/v/dispatcher_spec.lua",
-      ["vanilla.spec"] = "vanilla/spec/init.lua",
-      ["vanilla.spec.runner"] = "vanilla/spec/runner.lua",
-      ["vanilla.spec.runners.integration"] = "vanilla/spec/runners/integration.lua",
-      ["vanilla.spec.runners.response"] = "vanilla/spec/runners/response.lua",
       ["vanilla.sys.application"] = "vanilla/sys/application.lua",
       ["vanilla.sys.config"] = "vanilla/sys/config.lua",
+      ["vanilla.sys.console"] = "vanilla/sys/console.lua",
       ["vanilla.sys.nginx.config"] = "vanilla/sys/nginx/config.lua",
       ["vanilla.sys.nginx.directive"] = "vanilla/sys/nginx/directive.lua",
       ["vanilla.sys.nginx.handle"] = "vanilla/sys/nginx/handle.lua",
@@ -63,6 +52,7 @@ build = {
       ["vanilla.v.controller"] = "vanilla/v/controller.lua",
       ["vanilla.v.dispatcher"] = "vanilla/v/dispatcher.lua",
       ["vanilla.v.error"] = "vanilla/v/error.lua",
+      ["vanilla.v.libs.ansicolors"] = "vanilla/v/libs/ansicolors.lua",
       ["vanilla.v.libs.cookie"] = "vanilla/v/libs/cookie.lua",
       ["vanilla.v.libs.http"] = "vanilla/v/libs/http.lua",
       ["vanilla.v.libs.logs"] = "vanilla/v/libs/logs.lua",
@@ -79,6 +69,9 @@ build = {
       ["vanilla.v.views.rtpl"] = "vanilla/v/views/rtpl.lua"
    },
    install ={
-      bin ={ "bin/vanilla" }
+      bin ={
+      "vanilla/bin/vanilla",
+      "vanilla/bin/vanilla-console"
+      }
    },
 }
